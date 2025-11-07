@@ -1,10 +1,10 @@
-# TRCNO — Kernel solvers & PINN notebooks
+# Operator Learning for Traffic Congestion
 
 This repository contains research/experiment Jupyter notebooks and a shared numerical kernel solver module used across them.
 
-Summary
-- kernel_solvers.py: central implementation of the numerical kernel solvers (solver_2x2 and K_solver_2x2). Notebooks now import the solver functions from this module instead of defining them inline.
-- Several Jupyter notebooks (.ipynb) for experiments, data generation and PINN/DeepONet training.
+Repository: https://github.com/curryzyang/TRCNO
+
+Associated paper: https://www.sciencedirect.com/science/article/pii/S0968090X24004492
 
 Repository layout (relevant files)
 - `kernel_solvers.py`  — shared solver implementations (solver_2x2, K_solver_2x2).
@@ -14,8 +14,8 @@ Quickstart
 1. Clone the repo and change to the repository root (so local imports like `utilities3`, `models` work):
 
    ```bash
-   git clone <your-repo-url>
-   cd <your-repo-folder>
+   git clone https://github.com/curryzyang/TRCNO.git
+   cd TRCNO
    ```
 
 2. Create a virtual environment and install dependencies:
@@ -32,45 +32,24 @@ Quickstart
    jupyter lab
    ```
 
-Design notes
-- The numerical kernel solver code that used to appear inline in multiple notebooks has been extracted to `kernel_solvers.py` for maintainability and reuse. Notebooks call:
-
-  - `from kernel_solvers import solver_2x2, K_solver_2x2`
-
-- Many notebooks already contain a small comment cell indicating the functions were moved out and an import line has been inserted in the top import cell.
-
-Example (Python snippet)
-
-```python
-# from project root
-from kernel_solvers import K_solver_2x2
-
-# `fun` should provide callables: mu(x), lam(x), lam_d(x), mu_d(x), c_1(x), c_2(x), and scalar q
-# N_g is the grid size used by the solver
-# Example usage (adapt to your notebook objects):
-# Kvu, Kvv = K_solver_2x2(fun, N_g)
-```
-
-Notes & caveats
-- Some notebooks import local helper modules (for example `utilities3`, `models`) that live in the repository; run Jupyter from the repo root so local imports resolve.
-- I intentionally preserved the dynamic `Struct`-style parameter objects used across notebooks for compatibility.
-- This README and `requirements.txt` provide a minimal environment to run the notebooks, but exact versions may be updated based on your target platform (CPU vs GPU) and DeepXDE backend choices.
-
-How to validate quickly
-- From the repo root, with the virtualenv activated, you can run a short import check in a Python REPL:
-
-  ```python
-  from kernel_solvers import solver_2x2, K_solver_2x2
-  print('kernel_solvers import OK')
-  ```
-
-If that runs without ImportError, notebooks should be able to import the module when started from the same folder.
-
-Contributing
-- If you update `kernel_solvers.py`, please keep backward compatibility for the simple wrapper `K_solver_2x2(fun, N_g)` used by notebooks.
-
 License
-- MIT (adjust if you want a different license)
+- MIT
 
 Contact
-- Add your contact or project link here before uploading to GitHub.
+- Paper: https://www.sciencedirect.com/science/article/pii/S0968090X24004492
+- Repository: https://github.com/curryzyang/TRCNO
+- Email: yzhang169@connect.hkust-gz.edu.cn
+
+Citation (BibTeX)
+
+```bibtex
+@article{zhang2025mitigating,
+   title={Mitigating stop-and-go traffic congestion with operator learning},
+   author={Zhang, Yihuai and Zhong, Ruiguo and Yu, Huan},
+   journal={Transportation Research Part C: Emerging Technologies},
+   volume={170},
+   pages={104928},
+   year={2025},
+   publisher={Elsevier}
+}
+```
