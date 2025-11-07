@@ -33,7 +33,7 @@ Quickstart
    ```
 
 License
-- MIT
+- [LICENSE](LICENSE)
 
 Contact
 - Paper: https://www.sciencedirect.com/science/article/pii/S0968090X24004492
