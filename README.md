@@ -32,9 +32,6 @@ Quickstart
    jupyter lab
    ```
 
-License
-- [LICENSE](LICENSE)
-
 Contact
 - Paper: https://www.sciencedirect.com/science/article/pii/S0968090X24004492
 - Repository: https://github.com/curryzyang/TRCNO
