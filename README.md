@@ -32,12 +32,9 @@ Quickstart
    jupyter lab
    ```
 
-Contact
-- Paper: https://www.sciencedirect.com/science/article/pii/S0968090X24004492
-- Repository: https://github.com/curryzyang/TRCNO
-- Email: yzhang169@connect.hkust-gz.edu.cn
+Citation 
 
-Citation (BibTeX)
+If you use this repository, please cite it as follows
 
 ```bibtex
 @article{zhang2025mitigating,
@@ -50,3 +47,5 @@ Citation (BibTeX)
    publisher={Elsevier}
 }
 ```
+Contact
+Feel free to email at yzhang169@connect.hkust-gz.edu.cn
